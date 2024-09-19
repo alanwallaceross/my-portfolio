@@ -40,18 +40,22 @@ export default function RootLayout({
             <div className="container mx-auto flex justify-center gap-2">
               <a href="https://www.linkedin.com/in/alan-ross-37b40060/">
                 <Image
-                  src="/icons8-linkedin.svg"
+                  src="/linkedin.svg"
                   alt="Linkedin Profile"
                   width={30}
                   height={30}
                 />
               </a>
-              <a href="https://github.com/alanwallaceross">
+              <a
+                className="translate-y-[2px]"
+                href="https://github.com/alanwallaceross"
+              >
                 <Image
-                  src="/icons8-github.svg"
+                  className="invert-[1]"
+                  src="/github.svg"
                   alt="Github Profile"
-                  width={30}
-                  height={30}
+                  width={25}
+                  height={25}
                 />
               </a>
             </div>
