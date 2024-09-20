@@ -8,8 +8,8 @@ import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Alan Wallace Ross Portfolio",
-  description: "Software Engineer portfolio",
+  title: "Alan Ross | Software Engineer",
+  description: "Software Engineer Portfolio",
 };
 
 export default function RootLayout({
