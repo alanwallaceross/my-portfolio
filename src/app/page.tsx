@@ -16,11 +16,11 @@ export default function Home() {
               />
             </div>
           </div>
-          <h2 className="text-2xl font-bold mb-4 mt-4">About Me</h2>
-          <p className="text-lg">
-            I&#39;m a full-stack developer with 5 years of experience in
-            building web applications. I specialize in JavaScript/TypeScript,
-            React, and Node.js.
+
+          <p className="text-lg mt-6">
+            Full-stack developer with 5 years of experience in building web
+            applications. I specialise in JavaScript/TypeScript, React, and
+            Node.js.
           </p>
         </div>
       </section>
@@ -28,7 +28,7 @@ export default function Home() {
       <section id="projects" className="">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-4 mt-4">Projects</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             {/* Example project cards */}
             <div className="p-4 border border-gray-300 rounded">
               <h3 className="text-xl font-semibold">Coming Soon</h3>
