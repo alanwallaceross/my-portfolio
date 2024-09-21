@@ -28,7 +28,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className="relative w-14 h-8 flex items-center p-3 transition-colors duration-300 focus:outline-none"
+      className="relative w-14 h-8 flex items-center p-3 transition-colors duration-300"
     >
       {theme === "dark" ? (
         <MoonIcon className="text-yellow-100" />
