@@ -33,11 +33,11 @@ const DarkModeToggle = () => {
     >
       {theme === "dark" ? (
         <MoonIcon className="text-yellow-100">
-          <span className="sr-only">Click to turn on night mode</span>
+          <span className="sr-only">Click to turn on day mode</span>
         </MoonIcon>
       ) : (
         <SunIcon className="text-yellow-500">
-          <span className="sr-only">Click to turn on day mode</span>
+          <span className="sr-only">Click to turn on night mode</span>
         </SunIcon>
       )}
     </button>
