@@ -8,7 +8,7 @@ export default function Home() {
           <div className="flex justify-start">
             <div className="w-64 h-64 relative drop-shadow-[2px_3px_3px_#000000]">
               <Image
-                src="/me_wall.jpg"
+                src="/me_wall.webp"
                 priority
                 alt="Alan"
                 width="250"
