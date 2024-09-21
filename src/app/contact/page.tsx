@@ -18,6 +18,7 @@ export default function Contact() {
         )}
 
         <form action={formAction} className="space-y-4">
+          {/* Honeypot */}
           <div
             aria-hidden="true"
             className="absolute left-[-10000px] top-auto w-px h-px overflow-hidden"
