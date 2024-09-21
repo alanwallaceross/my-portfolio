@@ -29,11 +29,16 @@ const DarkModeToggle = () => {
     <button
       onClick={toggleDarkMode}
       className="relative w-14 h-8 flex items-center p-3 transition-colors duration-300"
+      aria-label="light"
     >
       {theme === "dark" ? (
-        <MoonIcon className="text-yellow-100" />
+        <MoonIcon className="text-yellow-100">
+          <span className="sr-only">Click to turn on night mode</span>
+        </MoonIcon>
       ) : (
-        <SunIcon className="text-yellow-500" />
+        <SunIcon className="text-yellow-500">
+          <span className="sr-only">Click to turn on day mode</span>
+        </SunIcon>
       )}
     </button>
   );

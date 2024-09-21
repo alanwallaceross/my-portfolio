@@ -21,6 +21,14 @@ const ContactFormSchema = z.object({
 });
 
 export async function handleContactForm(prevState: State, formData: FormData) {
+  const phone = formData.get("phone") as string;
+
+  if (phone) {
+    return {
+      message: null,
+    };
+  }
+
   const validatedFields = ContactFormSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
@@ -31,7 +39,7 @@ export async function handleContactForm(prevState: State, formData: FormData) {
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-      message: "Missing Fields. Failed to Send Email.",
+      message: "Missing or Incorrect Fields. Failed to Send Email.",
     };
   }
 

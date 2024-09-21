@@ -11,9 +11,8 @@ export default function Home() {
                 src="/me_wall.jpg"
                 priority
                 alt="Alan"
-                fill
-                sizes="(min-width:0px) 300px"
-                quality={100}
+                width="250"
+                height="40"
                 className="rounded-full object-cover"
               />
             </div>

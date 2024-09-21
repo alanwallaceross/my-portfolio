@@ -132,9 +132,7 @@ export default function Contact() {
 
           {state.errors && (
             <div className="text-red-600 mb-4">
-              {Object.entries(state.errors).map(([field, error]) =>
-                error ? <p key={field}>{error}</p> : null
-              )}
+              {state.message && state.message}
             </div>
           )}
 
