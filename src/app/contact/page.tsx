@@ -67,7 +67,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Subject Field */}
           <div>
             <label
               htmlFor="subject"
@@ -92,7 +91,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Message Field */}
           <div>
             <label
               htmlFor="message"
@@ -125,7 +123,6 @@ export default function Contact() {
             </div>
           )}
 
-          {/* Submit Button */}
           <div className="text-center">
             <button
               type="submit"
