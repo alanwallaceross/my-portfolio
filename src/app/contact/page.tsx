@@ -1,4 +1,4 @@
-"use client"; // Required for Client Components that use hooks
+"use client";
 
 import { useActionState } from "react";
 import { handleContactForm, State } from "../lib/actions";
@@ -13,28 +13,11 @@ export default function Contact() {
         <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 text-center mb-6">
           Contact Me
         </h1>
-
-        {/* Display validation errors */}
-        {state.errors && (
-          <div className="text-red-600 mb-4">
-            {Object.entries(state.errors).map(([field, error]) =>
-              error ? (
-                <p key={field}>
-                  {field}: {error}
-                </p>
-              ) : null
-            )}
-          </div>
-        )}
-
-        {/* Display success message */}
         {state.message && !state.errors && (
           <div className="text-green-600 mb-4">{state.message}</div>
         )}
 
-        {/* Use native form submission and set action to formAction */}
         <form action={formAction} className="space-y-4">
-          {/* Name Field */}
           <div>
             <label
               htmlFor="name"
@@ -46,12 +29,20 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
+              defaultValue=""
               className="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm dark:bg-gray-700 dark:text-gray-100 focus:ring-blue-500 focus:border-blue-500"
-              required
+              aria-describedby="name-error"
             />
+            <div id="name-error" aria-live="polite" aria-atomic="true">
+              {state.errors?.name &&
+                state.errors.name.map((error: string) => (
+                  <p className="mt-2 text-sm text-red-500" key={error}>
+                    {error}
+                  </p>
+                ))}
+            </div>
           </div>
 
-          {/* Email Field */}
           <div>
             <label
               htmlFor="email"
@@ -60,12 +51,20 @@ export default function Contact() {
               Email
             </label>
             <input
-              type="email"
               id="email"
               name="email"
+              defaultValue=""
               className="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm dark:bg-gray-700 dark:text-gray-100 focus:ring-blue-500 focus:border-blue-500"
-              required
+              aria-describedby="email-error"
             />
+            <div id="email-error" aria-live="polite" aria-atomic="true">
+              {state.errors?.email &&
+                state.errors.email.map((error: string) => (
+                  <p className="mt-2 text-sm text-red-500" key={error}>
+                    {error}
+                  </p>
+                ))}
+            </div>
           </div>
 
           {/* Subject Field */}
@@ -81,8 +80,16 @@ export default function Contact() {
               id="subject"
               name="subject"
               className="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm dark:bg-gray-700 dark:text-gray-100 focus:ring-blue-500 focus:border-blue-500"
-              required
+              aria-describedby="subject-error"
             />
+            <div id="subject-error" aria-live="polite" aria-atomic="true">
+              {state.errors?.subject &&
+                state.errors.subject.map((error: string) => (
+                  <p className="mt-2 text-sm text-red-500" key={error}>
+                    {error}
+                  </p>
+                ))}
+            </div>
           </div>
 
           {/* Message Field */}
@@ -98,9 +105,25 @@ export default function Contact() {
               name="message"
               rows={4}
               className="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm dark:bg-gray-700 dark:text-gray-100 focus:ring-blue-500 focus:border-blue-500"
-              required
+              aria-describedby="message-error"
             ></textarea>
+            <div id="message-error" aria-live="polite" aria-atomic="true">
+              {state.errors?.message &&
+                state.errors.message.map((error: string) => (
+                  <p className="mt-2 text-sm text-red-500" key={error}>
+                    {error}
+                  </p>
+                ))}
+            </div>
           </div>
+
+          {state.errors && (
+            <div className="text-red-600 mb-4">
+              {Object.entries(state.errors).map(([field, error]) =>
+                error ? <p key={field}>{error}</p> : null
+              )}
+            </div>
+          )}
 
           {/* Submit Button */}
           <div className="text-center">

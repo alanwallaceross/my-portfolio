@@ -38,22 +38,18 @@ export async function handleContactForm(prevState: State, formData: FormData) {
   const { name, email, subject, message } = validatedFields.data;
 
   try {
-    // Create a Nodemailer transporter using Gmail SMTP
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.GMAIL_USER, // Your Gmail account
-        pass: process.env.GMAIL_PASS, // Your Gmail App Password
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
       },
     });
 
-    console.log("did we get here");
-
-    // Define the email options
     const mailOptions = {
-      from: process.env.GMAIL_USER, // Your Gmail account (the sender)
-      to: process.env.GMAIL_USER, // Your email address (the recipient of the contact form)
-      replyTo: email, // Set the reply-to address to the form submitter's email
+      from: process.env.GMAIL_USER,
+      to: process.env.GMAIL_USER,
+      replyTo: email,
       subject: `New Contact Form Message from ${name}`,
       text: `
         You have received a new message from the contact form on your portfolio:
@@ -67,10 +63,8 @@ export async function handleContactForm(prevState: State, formData: FormData) {
       `,
     };
 
-    // Send the email
     await transporter.sendMail(mailOptions);
 
-    // Return success message
     return { message: "Message sent successfully!" };
   } catch (error) {
     console.error("Error sending email:", error);
