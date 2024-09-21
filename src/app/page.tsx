@@ -3,10 +3,10 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main>
-      <section id="about" className="">
+      <section id="about" className="py-12">
         <div className="container mx-auto px-4">
-          <div className="flex items-center">
-            <div className="w-64 h-64 relative mt-4 drop-shadow-[2px_3px_3px_#000000]">
+          <div className="flex justify-start">
+            <div className="w-64 h-64 relative drop-shadow-[2px_3px_3px_#000000]">
               <Image
                 src="/me_wall.jpg"
                 alt="Your Name"
@@ -17,7 +17,7 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="text-lg mt-6">
+          <p className="text-lg mt-12">
             Full-stack developer with 5 years of experience in building web
             applications. I specialise in JavaScript/TypeScript, React, and
             Node.js.
@@ -27,7 +27,7 @@ export default function Home() {
 
       <section id="projects" className="">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-4 mt-4">Projects</h2>
+          <h2 className="text-2xl font-bold mb-4">Projects</h2>
           <div className="grid grid-cols-1 gap-4">
             <div className="p-4 border border-gray-300 rounded">
               <h3 className="text-xl font-semibold">Coming Soon</h3>

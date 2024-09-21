@@ -8,7 +8,7 @@ export default function Contact() {
   const [state, formAction] = useActionState(handleContactForm, initialState);
 
   return (
-    <section className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center justify-center py-12">
+    <section className="flex flex-col items-center justify-center py-12">
       <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg w-full max-w-lg p-8">
         <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 text-center mb-6">
           Contact Me
@@ -18,6 +18,20 @@ export default function Contact() {
         )}
 
         <form action={formAction} className="space-y-4">
+          <div
+            aria-hidden="true"
+            className="absolute left-[-10000px] top-auto w-px h-px overflow-hidden"
+          >
+            <label htmlFor="phone">Phone</label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
           <div>
             <label
               htmlFor="name"
